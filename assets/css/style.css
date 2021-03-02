@@ -1,0 +1,832 @@
+@media only screen and (min-width: 1200px) {
+  .Home {
+    background-image: url("../images/HomeBg.png");
+
+    /* Full height */
+    height: 100vh;
+    width: 100vw;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+
+    /* make it look decent enough */
+    font-family: "Avenir Next", "Avenir", sans-serif;
+
+    overflow-x: hidden; /* needed because hiding the menu on the right side is not perfect,  */
+  }
+
+  a {
+    text-decoration: none;
+    color: #232323;
+
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: tomato;
+  }
+
+  #menuToggle {
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 50px;
+
+    z-index: 1;
+
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  #menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+
+    cursor: pointer;
+
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+
+    -webkit-touch-callout: none;
+  }
+
+  #menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #cdcdcd;
+    border-radius: 3px;
+
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  }
+
+  #menuToggle span:first-child {
+    transform-origin: 0% 0%;
+  }
+
+  #menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+
+  /* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+  #menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+  }
+
+  /*
+  * But let's hide the middle one.
+  */
+  #menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+  /*
+  * Ohyeah and the last one should go the other direction
+  */
+  #menuToggle input:checked ~ span:nth-last-child(2) {
+    opacity: 1;
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+
+  /*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+  #menu {
+    position: absolute;
+    width: 300px;
+    margin: -30px 0 0 0;
+    padding: 50px;
+    padding-top: 125px;
+    right: -100px;
+
+    background: transparent;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+
+    transform-origin: 0% 0%;
+    transform: translate(100%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+
+  #menu li {
+    padding: 10px 0;
+    font-size: 22px;
+  }
+
+  /*
+  * And let's fade it in from the left
+  */
+  #menuToggle input:checked ~ ul {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+
+  #carousel {
+    width: 30%;
+    height: 30%;
+  }
+
+  .slider-container {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative; /* since slides are absolute */
+
+    animation: 0.4s 0.2s both fadeIn;
+  }
+
+  .row-about {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 10px;
+  }
+
+  .slide {
+    /* positioning all slides normal position to full size of slider and in view */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    animation: 12s linear infinite sliderAnimation;
+    /*
+  animation-name: sliderAnimation;
+  animation-duration: 12s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  */
+
+    box-sizing: border-box; /* to keep total width at 100% */
+
+    display: flex; /* to position the text inside*/
+  }
+
+  .slide:first-of-type {
+    /* City */
+    background: no-repeat 50% 20% / cover url("../images/c1.png");
+    /* positioning for the text inside */
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  .slide:nth-of-type(2) {
+    /* Nature Bridge */
+    background: no-repeat center/cover url("../images/c2.png");
+
+    /* 12s - 9s = 3s... Will start after 3s */
+    animation-delay: -9s;
+  }
+
+  .slide:last-of-type {
+    /* Painting */
+    background: no-repeat center/cover url("../images/c3.png");
+    /* Will start after 6s */
+    animation-delay: -6s;
+
+    /* positioning for the text inside */
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  @keyframes sliderAnimation {
+    /* 4 slides, 20% in place and 5% transition time = 100% */
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    } /* starts in view */
+    20% {
+      transform: translateX(0);
+      opacity: 1;
+    } /* stays in view */
+    25% {
+      transform: translateX(-100%);
+      opacity: 1;
+    } /* slides out left */
+    70% {
+      transform: translateX(-100%);
+      opacity: 0;
+    } /* Doesn't matter at what percent: changes to transparent so can't see it travel back across to the right. */
+    71% {
+      transform: translateX(100%);
+      opacity: 0;
+    } /* Doesn't matter at what percent: moves off right */
+    95% {
+      transform: translateX(100%);
+      opacity: 1;
+    } /* Becomes transparent and Ready to slide on from the right */
+  }
+
+  .slide p {
+    /*style for the text*/
+    margin: 5vw;
+    font-size: 3vw;
+    color: white;
+    text-shadow: 0.1vw 0.1vw black;
+    font-family: Arial Black, Georgia, Garamond, Palatino, Trebuchet MS, Verdana;
+  }
+
+  .slide:last-of-type p {
+    /* because white text on white background */
+    text-shadow: 0 0 15px black;
+  }
+  body {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .link {
+    text-align: center;
+    padding: 100px;
+  }
+
+  .link a {
+    color: white;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  }
+
+  .grid-row {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
+  .flex-name,
+  .flex-img,
+  .flex-mail {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #slider {
+    float: right;
+    margin-top: 200px;
+    margin-right: 300px;
+    width: 834px;
+    height: 556px;
+    position: relative;
+    top: -150px;
+  }
+
+  .about-header {
+    background-color: #1b2836;
+    color: white;
+  }
+
+  #about-img {
+    width: 729px;
+    height: 923px;
+  }
+
+  #about-content {
+    padding-top: 300px;
+  }
+
+  .mv-header {
+    background-color: #b60914;
+    color: white;
+  }
+
+  #mv-img {
+    width: 729px;
+    height: 923px;
+  }
+
+  #mv-content {
+    padding-top: 300px;
+  }
+
+  .cc-header {
+    background-color: #f2c641;
+    color: white;
+  }
+
+  #cc-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  #cc-content {
+    padding-top: 300px;
+  }
+
+  .staff-name {
+    padding-top: 50px;
+  }
+
+  .dark {
+    color: white;
+    background-color: black;
+  }
+
+  .petro h1 {
+    color: #d29b27;
+  }
+
+  .pr {
+    margin-top: 10px;
+  }
+
+  .pr img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .sper {
+    background-color: black;
+    color: white;
+  }
+
+  .sp .col img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .os-h {
+    background-color: black;
+    color: white;
+  }
+
+  .es-h {
+    background-color: black;
+    color: white;
+  }
+
+  .m-h {
+    background-color: #820a00;
+    color: white;
+  }
+
+  .cu-h {
+    background-color: #2190aa;
+    color: white;
+  }
+
+  .gal img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .gal .row {
+    margin-top: 10px;
+  }
+
+  .ga-h {
+    background-color: #044f18;
+    color: white;
+  }
+
+  .na {
+    padding-right: 70px;
+  }
+}
+
+/*
+
+Mobile Design
+
+*/
+@media only screen and (max-width: 1200px) {
+  .Home {
+    background-image: url("../images/HomeBg.png");
+
+    /* Full height */
+    height: 100vh;
+    width: 100vw;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #gallery {
+    display: none;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+
+    /* make it look decent enough */
+    font-family: "Avenir Next", "Avenir", sans-serif;
+
+    overflow-x: hidden; /* needed because hiding the menu on the right side is not perfect,  */
+  }
+
+  a {
+    text-decoration: none;
+    color: #232323;
+
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: tomato;
+  }
+
+  #menuToggle {
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 50px;
+
+    z-index: 1;
+
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  #menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+
+    cursor: pointer;
+
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+
+    -webkit-touch-callout: none;
+  }
+
+  #menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #cdcdcd;
+    border-radius: 3px;
+
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  }
+
+  #menuToggle span:first-child {
+    transform-origin: 0% 0%;
+  }
+
+  #menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+
+  /* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+  #menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+  }
+
+  /*
+  * But let's hide the middle one.
+  */
+  #menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+  /*
+  * Ohyeah and the last one should go the other direction
+  */
+  #menuToggle input:checked ~ span:nth-last-child(2) {
+    opacity: 1;
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+
+  /*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+  #menu {
+    position: absolute;
+    width: 300px;
+    margin: -30px 0 0 0;
+    padding: 50px;
+    padding-top: 125px;
+    right: -100px;
+
+    background: transparent;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+
+    transform-origin: 0% 0%;
+    transform: translate(100%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+
+  #menu li {
+    padding: 10px 0;
+    font-size: 22px;
+  }
+
+  /*
+  * And let's fade it in from the left
+  */
+  #menuToggle input:checked ~ ul {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+
+  #carousel {
+    width: 30%;
+    height: 30%;
+  }
+
+  .slider-container {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative; /* since slides are absolute */
+
+    animation: 0.4s 0.2s both fadeIn;
+  }
+
+  .slide {
+    /* positioning all slides normal position to full size of slider and in view */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    animation: 12s linear infinite sliderAnimation;
+    /*
+  animation-name: sliderAnimation;
+  animation-duration: 12s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  */
+
+    box-sizing: border-box; /* to keep total width at 100% */
+
+    display: flex; /* to position the text inside*/
+  }
+
+  .slide:first-of-type {
+    /* City */
+    background: no-repeat 50% 20% / cover url("../images/c1.png");
+    /* positioning for the text inside */
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  .slide:nth-of-type(2) {
+    /* Nature Bridge */
+    background: no-repeat center/cover url("../images/c2.png");
+
+    /* 12s - 9s = 3s... Will start after 3s */
+    animation-delay: -9s;
+  }
+
+  .slide:last-of-type {
+    /* Painting */
+    background: no-repeat center/cover url("../images/c3.png");
+    /* Will start after 6s */
+    animation-delay: -6s;
+
+    /* positioning for the text inside */
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  @keyframes sliderAnimation {
+    /* 4 slides, 20% in place and 5% transition time = 100% */
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    } /* starts in view */
+    20% {
+      transform: translateX(0);
+      opacity: 1;
+    } /* stays in view */
+    25% {
+      transform: translateX(-100%);
+      opacity: 1;
+    } /* slides out left */
+    70% {
+      transform: translateX(-100%);
+      opacity: 0;
+    } /* Doesn't matter at what percent: changes to transparent so can't see it travel back across to the right. */
+    71% {
+      transform: translateX(100%);
+      opacity: 0;
+    } /* Doesn't matter at what percent: moves off right */
+    95% {
+      transform: translateX(100%);
+      opacity: 1;
+    } /* Becomes transparent and Ready to slide on from the right */
+  }
+
+  .slide p {
+    /*style for the text*/
+    margin: 5vw;
+    font-size: 3vw;
+    color: white;
+    text-shadow: 0.1vw 0.1vw black;
+    font-family: Arial Black, Georgia, Garamond, Palatino, Trebuchet MS, Verdana;
+  }
+
+  .slide:last-of-type p {
+    /* because white text on white background */
+    text-shadow: 0 0 15px black;
+  }
+  body {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .link {
+    text-align: center;
+    padding: 100px;
+  }
+
+  .link a {
+    color: white;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  }
+
+  .grid-row {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+  }
+
+  .flex-name,
+  .flex-img,
+  .flex-mail {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header-sm {
+    margin-top: 50px;
+    font-size: 1em;
+  }
+
+  #slider {
+    width: 227px;
+    height: 151px;
+    margin: 100px 10px 30px 100px;
+  }
+
+  .about-header {
+    background-color: #1b2836;
+    color: white;
+  }
+
+  #about-img {
+    width: 100%;
+    height: 923px;
+  }
+
+  #about-content {
+  }
+
+  .mv-header {
+    background-color: #b60914;
+    color: white;
+  }
+
+  #mv-img {
+    width: 729px;
+    height: 923px;
+  }
+
+  #mv-content {
+  }
+
+  .cc-header {
+    background-color: #f2c641;
+    color: white;
+  }
+
+  #cc-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  #cc-content {
+    padding-top: 300px;
+  }
+
+  .staff-name {
+    padding-top: 50px;
+  }
+
+  .dark {
+    color: white;
+    background-color: black;
+  }
+
+  .petro h1 {
+    color: #d29b27;
+  }
+
+  .pr {
+    margin-top: 10px;
+  }
+
+  .pr img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .sper {
+    background-color: black;
+    color: white;
+  }
+
+  .sp .col img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .os-h {
+    background-color: black;
+    color: white;
+  }
+
+  .es-h {
+    background-color: black;
+    color: white;
+  }
+
+  .m-h {
+    background-color: #820a00;
+    color: white;
+  }
+
+  .cu-h {
+    background-color: #2190aa;
+    color: white;
+  }
+
+  .gal img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .gal .row {
+    margin-top: 10px;
+  }
+
+  .ga-h {
+    background-color: #044f18;
+    color: white;
+  }
+
+  .na {
+    padding-right: 70px;
+  }
+}
