@@ -323,9 +323,9 @@
     width: 729px;
     height: 500px;
   }
-
+  /* 
   #mv-content {
-  }
+  } */
 
   .cc-header {
     background-color: #f2c641;
@@ -410,6 +410,22 @@
   .na {
     padding-right: 70px;
   }
+
+  .g-row {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-left: 10px;
+  }
+
+  .only-small {
+    display: none;
+  }
+
+  .f-row {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+  }
 }
 
 /*
@@ -432,6 +448,10 @@ Mobile Design
   }
 
   #gallery {
+    display: none;
+  }
+
+  .only-small {
     display: none;
   }
 
@@ -729,8 +749,8 @@ Mobile Design
     height: 500px;
   }
 
-  #about-content {
-  }
+  /* #about-content {
+  } */
 
   .mv-header {
     background-color: #b60914;
@@ -742,8 +762,8 @@ Mobile Design
     height: 500px;
   }
 
-  #mv-content {
-  }
+  /* #mv-content {
+  } */
 
   .cc-header {
     background-color: #f2c641;
@@ -828,6 +848,22 @@ Mobile Design
   .na {
     padding-right: 70px;
   }
+
+  .g-row {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-left: 10px;
+  }
+
+  .only-small {
+    display: none;
+  }
+
+  .f-row {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -838,6 +874,10 @@ Mobile Design
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
+  }
+
+  .only-lg {
+    display: none;
   }
 
   .Home {
@@ -1151,8 +1191,8 @@ Mobile Design
     height: 923px;
   }
 
-  #about-content {
-  }
+  /* #about-content {
+  } */
 
   .mv-header {
     background-color: #b60914;
@@ -1164,8 +1204,8 @@ Mobile Design
     height: 923px;
   }
 
-  #mv-content {
-  }
+  /* #mv-content {
+  } */
 
   .cc-header {
     background-color: #f2c641;
@@ -1173,8 +1213,8 @@ Mobile Design
   }
 
   #cc-img {
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
   }
 
   #cc-content {
@@ -1250,4 +1290,23 @@ Mobile Design
   .na {
     padding-right: 70px;
   }
+
+  .g-row {
+    display: grid;
+    grid-template-columns: auto;
+    padding-left: 10px;
+  }
+
+  .f-row {
+    display: flex;
+    column-gap: 10px;
+  }
+
+  .only-small {
+    display: block;
+  }
+
+  /* .f-flow {
+    flex-flow: 1;
+  } */
 }
