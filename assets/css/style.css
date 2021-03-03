@@ -413,8 +413,8 @@
 
   .g-row {
     display: grid;
-    grid-template-columns: auto auto;
-    padding-left: 10px;
+    grid-template-columns: auto;
+    grid-gap: 10px;
   }
 
   .only-small {
@@ -423,8 +423,12 @@
 
   .f-row {
     display: flex;
-    justify-content: center;
     column-gap: 10px;
+  }
+
+  .center-make {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -852,7 +856,6 @@ Mobile Design
   .g-row {
     display: grid;
     grid-template-columns: auto auto;
-    padding-left: 10px;
   }
 
   .only-small {
@@ -1294,8 +1297,6 @@ Mobile Design
   .g-row {
     display: grid;
     grid-template-columns: auto;
-    padding-left: 10px;
-    padding-right: 10px;
   }
 
   .f-row {
