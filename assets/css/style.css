@@ -881,7 +881,7 @@ Mobile Design
   }
 
   .Home {
-    background-image: url("../images/HomeBg.png");
+    background-image: none;
 
     /* Full height */
     height: 100vh;
@@ -1295,6 +1295,7 @@ Mobile Design
     display: grid;
     grid-template-columns: auto;
     padding-left: 10px;
+    padding-right: 10px;
   }
 
   .f-row {
