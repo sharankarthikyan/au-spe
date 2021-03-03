@@ -831,6 +831,15 @@ Mobile Design
 }
 
 @media only screen and (max-width: 600px) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+  }
+
   .Home {
     background-image: url("../images/HomeBg.png");
 
