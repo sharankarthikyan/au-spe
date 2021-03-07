@@ -430,6 +430,16 @@
     display: flex;
     justify-content: center;
   }
+
+  .gp-row {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .gspe-row {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
 }
 
 /*
@@ -867,6 +877,11 @@ Mobile Design
     justify-content: center;
     column-gap: 10px;
   }
+
+  .gspe-row {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -881,6 +896,12 @@ Mobile Design
 
   .only-lg {
     display: none;
+  }
+
+  .gspe-row {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
   }
 
   .Home {
