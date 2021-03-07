@@ -835,7 +835,7 @@ Chennai, Tamil Nadu 600025. <br>
 
 
           <div class="col p-5">
-            <form method="POST" data-netlify="true">
+            <form method="POST" data-netlify="true" data-netlify-recaptcha="true">
               <div class="form-group p-3">
                 <label for="text">Name</label>
                 <input type="text" class="form-control" id="text" placeholder="Enter name">
@@ -848,6 +848,7 @@ Chennai, Tamil Nadu 600025. <br>
                 <label for="textarea">Message</label>
                 <textarea class="form-control" id="textarea" rows="3"></textarea>
               </div>
+              <div data-netlify-recaptcha="true"></div>
               <div class="p-3">
               <button type="submit" class="btn btn-primary">Send</button>
               </div>
