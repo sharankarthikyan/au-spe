@@ -404,6 +404,12 @@
     margin-top: 10px;
   }
 
+  .gg-row {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+  }
+
   .ga-h {
     background-color: #044f18;
     color: white;
@@ -851,6 +857,7 @@ Mobile Design
   .header-sm {
     margin-top: 50px;
     font-size: 1em;
+    font-family: Helvetica;
   }
 
   #slider {
@@ -986,6 +993,12 @@ Mobile Design
     column-gap: 10px;
   }
 
+  .gg-row {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+  }
+
   .gspe-row {
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -1048,6 +1061,12 @@ Mobile Design
 
   a:hover {
     color: tomato;
+  }
+
+  .gg-row {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px;
   }
 
   #menuToggle {
@@ -1304,7 +1323,9 @@ Mobile Design
 
   .header-sm {
     margin-top: 50px;
-    font-size: 1em;
+    background-color: black;
+    color: white;
+    font-family: Helvetica;
   }
 
   #slider {
