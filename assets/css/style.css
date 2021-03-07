@@ -312,6 +312,7 @@
 
   #about-content {
     width: 700px;
+    padding: 10px;
   }
 
   .mv-header {
@@ -323,9 +324,10 @@
     width: 729px;
     height: 500px;
   }
-  /* 
+
   #mv-content {
-  } */
+    padding: 10px;
+  }
 
   .cc-header {
     background-color: #f2c641;
@@ -459,6 +461,110 @@ Mobile Design
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  .slider-container {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative; /* since slides are absolute */
+
+    animation: 0.4s 0.2s both fadeIn;
+  }
+
+  .row-about {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 10px;
+  }
+
+  .slide {
+    /* positioning all slides normal position to full size of slider and in view */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    animation: 12s linear infinite sliderAnimation;
+    /*
+  animation-name: sliderAnimation;
+  animation-duration: 12s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  */
+
+    box-sizing: border-box; /* to keep total width at 100% */
+
+    display: flex; /* to position the text inside*/
+  }
+
+  .slide:first-of-type {
+    /* City */
+    background: no-repeat 50% 20% / cover url("../images/c1.png");
+    /* positioning for the text inside */
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  .slide:nth-of-type(2) {
+    /* Nature Bridge */
+    background: no-repeat center/cover url("../images/c2.png");
+
+    /* 12s - 9s = 3s... Will start after 3s */
+    animation-delay: -9s;
+  }
+
+  .slide:last-of-type {
+    /* Painting */
+    background: no-repeat center/cover url("../images/c3.png");
+    /* Will start after 6s */
+    animation-delay: -6s;
+
+    /* positioning for the text inside */
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  @keyframes sliderAnimation {
+    /* 4 slides, 20% in place and 5% transition time = 100% */
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    } /* starts in view */
+    20% {
+      transform: translateX(0);
+      opacity: 1;
+    } /* stays in view */
+    25% {
+      transform: translateX(-100%);
+      opacity: 1;
+    } /* slides out left */
+    70% {
+      transform: translateX(-100%);
+      opacity: 0;
+    } /* Doesn't matter at what percent: changes to transparent so can't see it travel back across to the right. */
+    71% {
+      transform: translateX(100%);
+      opacity: 0;
+    } /* Doesn't matter at what percent: moves off right */
+    95% {
+      transform: translateX(100%);
+      opacity: 1;
+    } /* Becomes transparent and Ready to slide on from the right */
+  }
+
+  .slide p {
+    /*style for the text*/
+    margin: 5vw;
+    font-size: 3vw;
+    color: white;
+    text-shadow: 0.1vw 0.1vw black;
+    font-family: Arial Black, Georgia, Garamond, Palatino, Trebuchet MS, Verdana;
+  }
+
+  .slide:last-of-type p {
+    /* because white text on white background */
+    text-shadow: 0 0 15px black;
   }
 
   #gallery {
@@ -748,8 +854,8 @@ Mobile Design
   }
 
   #slider {
-    width: 227px;
-    height: 151px;
+    width: 400px;
+    height: 400px;
     margin: 100px 10px 30px 100px;
   }
 
@@ -763,8 +869,9 @@ Mobile Design
     height: 500px;
   }
 
-  /* #about-content {
-  } */
+  #about-content {
+    padding: 10px;
+  }
 
   .mv-header {
     background-color: #b60914;
@@ -776,8 +883,9 @@ Mobile Design
     height: 500px;
   }
 
-  /* #mv-content {
-  } */
+  #mv-content {
+    padding: 10px;
+  }
 
   .cc-header {
     background-color: #f2c641;
@@ -1202,7 +1310,7 @@ Mobile Design
   #slider {
     width: 227px;
     height: 151px;
-    margin: 100px 10px 30px 100px;
+    margin: 200px 10px 30px 100px;
   }
 
   .about-header {
@@ -1215,8 +1323,9 @@ Mobile Design
     height: 923px;
   }
 
-  /* #about-content {
-  } */
+  #about-content {
+    padding: 10px;
+  }
 
   .mv-header {
     background-color: #b60914;
@@ -1228,8 +1337,9 @@ Mobile Design
     height: 923px;
   }
 
-  /* #mv-content {
-  } */
+  #mv-content {
+    padding: 10px;
+  }
 
   .cc-header {
     background-color: #f2c641;
