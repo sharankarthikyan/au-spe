@@ -588,10 +588,6 @@ Mobile Design
     text-shadow: 0 0 15px black;
   }
 
-  #gallery {
-    display: none;
-  }
-
   .only-small {
     display: none;
   }
@@ -1065,10 +1061,6 @@ Mobile Design
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
-
-  #gallery {
-    display: none;
   }
 
   body {
