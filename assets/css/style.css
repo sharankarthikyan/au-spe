@@ -12,6 +12,27 @@
     background-size: cover;
   }
 
+  .p-row {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    margin-top: 20px;
+  }
+
+  .p-col img {
+    width: 300px;
+  }
+
+  .p-col {
+    display: flex;
+  }
+
+  .p-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .header-sm {
     font-size: 2.2rem;
     font-family: "Helvetica", "Arial", sans-serif;
@@ -523,6 +544,27 @@ Mobile Design
     box-sizing: border-box; /* to keep total width at 100% */
 
     display: flex; /* to position the text inside*/
+  }
+
+  .p-row {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    margin-top: 20px;
+  }
+
+  .p-col img {
+    width: 300px;
+  }
+
+  .p-col {
+    display: flex;
+  }
+
+  .p-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .slide:first-of-type {
@@ -1499,6 +1541,29 @@ Mobile Design
 
   .only-small {
     display: block;
+  }
+
+  .p-row {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    margin-top: 20px;
+  }
+
+  .p-col img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .p-col {
+    display: flex;
+    align-items: center;
+  }
+
+  .p-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   /* .f-flow {
