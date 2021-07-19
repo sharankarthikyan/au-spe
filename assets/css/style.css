@@ -486,3 +486,23 @@
   .slick-arrow.slick-hidden {
 	  display: none;
   }
+
+/* Event Partners */
+.eventPartnersLogoLine {
+	width: 80%;
+	margin: 1rem auto;
+	padding: 1rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.eventPartnerLogo {
+	height: 10rem;
+	margin: 0.5rem 3rem;
+}
+
+.eventPartnerLogo img {
+	height: 70%;
+}
