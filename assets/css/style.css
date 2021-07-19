@@ -143,3 +143,75 @@ and (max-device-width: 1130px) {
 	justify-content: center;
 }
 
+/* Petro Vision */
+
+.pertrovisionContainer {
+	margin: 1rem;
+}
+
+.petrovisionIntro {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-gap: 1rem;
+	margin: 1rem 3rem;
+}
+
+.petrovisionLogoContainer {
+	display: flex;
+	align-items: center;
+}
+
+@media only screen 
+and (min-device-width: 500px)
+and (max-device-width: 900px) {
+	.petrovisionIntro {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 1rem 3rem;
+	}
+	.petrovisionLogoContainer {
+		width: 25%;
+	}
+}
+
+
+.petrovisionLogoContainer img {
+	width: 100%;
+}
+
+.petrovisionDetails {
+	text-align: justify;
+}
+
+.pertrovisionSubTopicContainer {
+	margin: 3rem 1rem 1rem 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.petrovisionSubTopic {
+	box-shadow:0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);border-radius: 0.5rem;border:0;
+	margin: 0.5rem;
+	padding: 0.5rem;
+	padding-top: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.petrovisionSubTopicLogo {
+	height: 20vh;
+}
+
+.petrovisionSubTopicLogo img {
+	height: 100%;
+}
+
+.petrovisionSubTopicDescription {
+	margin: 0.5rem;
+	padding: 0.5rem;
+	
+}
