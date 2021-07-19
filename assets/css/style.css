@@ -16,6 +16,8 @@
 .bodyWrapper {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
 }
 
 .header {
@@ -60,6 +62,10 @@
 	cursor: pointer;
 	color: #1558d6;
 	background-color: #e8f0f8;
+}
+
+.navigationButton:hover {
+	text-decoration: none;
 }
 
 /* Main Gallery */
@@ -505,4 +511,18 @@
 
 .eventPartnerLogo img {
 	height: 70%;
+}
+
+/* Copyright */
+
+.copyright {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.copyrightDivider {
+	border-right: 1px solid black;
+	height: 1rem;
+	margin: 0 1rem;
 }
