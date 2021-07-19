@@ -1,0 +1,145 @@
+.bodyWrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 1rem 5rem;
+}
+
+.imgHolder {
+	height: 5rem;
+	width: 5rem;
+}
+
+.imgHolder img {
+	height: 100%;
+	width: 100%;
+}
+
+/* Navigation */
+
+.navigation {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.navigationButtonsHolder {
+	display: flex;
+	overflow: auto;
+	width: 80%;
+	padding: 0.8rem;
+}
+
+.navigationButton {
+	display: flex;
+	margin: 0 0.625rem;
+	text-decoration: none;
+	padding: 0.3125rem 0.9375rem;
+	border: 1px solid var(--borderColor);
+	border-radius: 10px;
+	cursor: pointer;
+	color: #1558d6;
+	background-color: #e8f0f8;
+}
+
+/* Main Gallery */
+.mainGallery {
+    width: 80%;
+    margin: 1rem auto;
+    padding: 5rem;
+}
+
+.headingHeading {
+	display: grid;
+	place-items: center;
+}
+
+/* About and Mission and Vision */
+
+.aboutusMission {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 2rem 1rem;
+}
+
+.aboutusMission .imageContainer {
+	display: flex;
+	justify-content: center;
+	width: 60vw;
+	margin: 0.5rem auto;
+	max-height: 50vh;
+}
+
+.aboutusMission .imageContainer img {
+	max-height: 100%;
+	max-width: 70%;
+}
+
+.aboutusMission .justify {
+	width: 70%;
+	margin: 1rem 0.5rem;
+	text-align: justify;
+}
+
+/* Core Committee */
+
+.committeMemberHolder {
+	margin: 1rem 2rem;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 1rem;
+}
+
+/* Media query for 768 px */
+
+@media only screen 
+and (min-device-width: 500px)
+and (max-device-width: 1130px) {
+	.committeMemberHolder {
+		margin: 1rem;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 0.2rem;
+	}
+}
+
+.committeeMember {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-shadow:0 .5em 1em -.125em rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.02);
+	border:0;
+	padding: 0.5rem;
+	border-radius: 1rem;
+}
+
+.committeeMember .committeeMember {
+	display: flex;
+	flex-direction: column;
+}
+
+.committeeMember .committeeMemberDetails {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.committeeMember .committeeMemberDetails span{
+	text-align: center;
+}
+
+.committeeMember .committeeMemberDesignation, .committeeMember .committeeMemberContactDetails, .committeeMember .committeeMemberName {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
