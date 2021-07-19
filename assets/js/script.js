@@ -1,4 +1,5 @@
 $(document).ready(function () {
+	
 	$(".spelogos").slick({
 		slidesToShow: 4,
 		slidesToScroll: 1,
