@@ -1,3 +1,18 @@
+::-webkit-scrollbar {
+	width: 20px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #d6dee1;
+	border-radius: 20px;
+	border: 6px solid transparent;
+	background-clip: content-box;
+}
+
 .bodyWrapper {
 	display: flex;
 	flex-direction: column;
@@ -49,9 +64,9 @@
 
 /* Main Gallery */
 .mainGallery {
-    width: 80%;
-    margin: 1rem auto;
-    padding: 5rem;
+	width: 80%;
+	margin: 1rem auto;
+	padding: 5rem;
 }
 
 .headingHeading {
@@ -99,9 +114,7 @@
 
 /* Media query for 768 px */
 
-@media only screen 
-and (min-device-width: 500px)
-and (max-device-width: 1130px) {
+@media only screen and (min-device-width: 500px) and (max-device-width: 1130px) {
 	.committeMemberHolder {
 		margin: 1rem;
 		display: grid;
@@ -115,8 +128,9 @@ and (max-device-width: 1130px) {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	box-shadow:0 .5em 1em -.125em rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.02);
-	border:0;
+	box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+		0 0 0 1px rgba(10, 10, 10, 0.02);
+	border: 0;
 	padding: 0.5rem;
 	border-radius: 1rem;
 }
@@ -132,11 +146,13 @@ and (max-device-width: 1130px) {
 	justify-content: center;
 }
 
-.committeeMember .committeeMemberDetails span{
+.committeeMember .committeeMemberDetails span {
 	text-align: center;
 }
 
-.committeeMember .committeeMemberDesignation, .committeeMember .committeeMemberContactDetails, .committeeMember .committeeMemberName {
+.committeeMember .committeeMemberDesignation,
+.committeeMember .committeeMemberContactDetails,
+.committeeMember .committeeMemberName {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -161,9 +177,7 @@ and (max-device-width: 1130px) {
 	align-items: center;
 }
 
-@media only screen 
-and (min-device-width: 500px)
-and (max-device-width: 900px) {
+@media only screen and (min-device-width: 500px) and (max-device-width: 900px) {
 	.petrovisionIntro {
 		display: flex;
 		flex-direction: column;
@@ -175,7 +189,6 @@ and (max-device-width: 900px) {
 		width: 25%;
 	}
 }
-
 
 .petrovisionLogoContainer img {
 	width: 100%;
@@ -193,7 +206,9 @@ and (max-device-width: 900px) {
 }
 
 .petrovisionSubTopic {
-	box-shadow:0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);border-radius: 0.5rem;border:0;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+	border-radius: 0.5rem;
+	border: 0;
 	margin: 0.5rem;
 	padding: 0.5rem;
 	padding-top: 1.5rem;
@@ -204,7 +219,7 @@ and (max-device-width: 900px) {
 
 .petrovisionSubTopicLogo {
 	height: 20vh;
-    max-width: 35vw;
+	max-width: 35vw;
 	display: flex;
 	align-items: center;
 }
@@ -216,14 +231,15 @@ and (max-device-width: 900px) {
 .petrovisionSubTopicDescription {
 	margin: 0.5rem;
 	padding: 0.5rem;
-	
 }
 
 /* Social Initiatives */
 
 .socialSubTopic {
 	max-width: 45%;
-	box-shadow:0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);border-radius: 0.5rem;border:0;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+	border-radius: 0.5rem;
+	border: 0;
 	margin: 0.5rem;
 	padding: 0.5rem;
 	padding-top: 1.5rem;
@@ -234,7 +250,7 @@ and (max-device-width: 900px) {
 
 .socialSubTopicLogo {
 	height: 20vh;
-    max-width: 35vw;
+	max-width: 35vw;
 	display: flex;
 	align-items: center;
 }
@@ -256,7 +272,6 @@ and (max-device-width: 900px) {
 .publicationLogo {
 	display: flex;
 	align-items: center;
-	
 }
 
 .publicationLogo img {
@@ -287,6 +302,8 @@ and (max-device-width: 900px) {
 	margin-top: 0.5rem;
 }
 
+/* Social Icons */
+
 .socialIcons {
 	width: 40%;
 	margin: 2rem auto;
@@ -300,4 +317,32 @@ and (max-device-width: 900px) {
 	display: flex;
 	flex: 1;
 	justify-content: center;
+}
+
+/* Gallery */
+
+.galleryHolderContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.galleryHolder {
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	padding: 1rem;
+	overflow: auto;
+	white-space: nowrap;
+}
+
+.galleryImage img {
+	display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    border-radius: 1.4rem;
+    text-decoration: none;
+    width: 300px;
+    height: 300px;
 }
