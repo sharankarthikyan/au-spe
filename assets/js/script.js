@@ -46,3 +46,14 @@ $(document).ready(function () {
 		],
 	});
 });
+
+$(document).on('click', '.navigationButton', function (e) {
+	e.preventDefault();
+	var selected = $(this).attr('href');
+	var id = selected.substring(1);
+
+	// animate to the top of the element with the id id
+	$('html, body').animate({
+		scrollTop: $("#" + id).offset().top
+	}, 1000);
+});
