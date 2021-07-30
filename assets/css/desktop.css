@@ -25,7 +25,8 @@
 	align-items: center;
 	justify-content: space-between;
 	padding-top: 1rem;
-	margin: 2rem 5rem;
+	padding: 2rem 5rem;
+	background-color: rgb(0 103 177 / 50%);
 }
 
 .imgHolder {
@@ -44,6 +45,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-color: rgb(0 103 177 / 80%);
 }
 
 .navigationButtonsHolder {
@@ -79,7 +81,11 @@
 
 .headingHeading {
 	display: grid;
-	place-items: center;
+    place-items: center;
+}
+
+.headingHeading h4 {
+	font-size: 2.5rem;
 }
 
 /* About and Mission and Vision */
@@ -109,6 +115,15 @@
 	width: 70%;
 	margin: 1rem 0.5rem;
 	text-align: justify;
+}
+
+.br3 {
+	border-radius: 3rem;
+}
+
+.brAndBorder {
+	border-radius: 0.5rem;
+    border: 1px solid rgb(84 84 84 / 40%);
 }
 
 /* Core Committee */
@@ -171,6 +186,7 @@
 
 .pertrovisionContainer {
 	margin: 1rem;
+    margin-top: 3rem;
 }
 
 .petrovisionIntro {
@@ -376,13 +392,20 @@
 	align-items: center;
 }
 
+.sponsorImage {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
 /* Slider */
 .slick-slide {
 	margin: 0px 20px;
 }
 
 .slick-slide img {
-	width: 100%;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .slick-slider {
@@ -515,4 +538,17 @@
 	border-right: 1px solid black;
 	height: 1rem;
 	margin: 0 1rem;
+}
+
+/* .contact {
+	width: 70%;
+	margin: 1rem auto;
+	border: 1px solid rgb(84 84 84 / 50%);
+	border-radius: 2rem;
+	background-color: rgb(0 103 177 / 40%);
+	color: #006266;
+} */
+
+.contactDiv {
+	background-color: rgba(0, 103, 177, 0.4);
 }

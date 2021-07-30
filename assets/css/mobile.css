@@ -25,7 +25,9 @@
 	align-items: center;
 	justify-content: center;
 	padding-top: 1rem;
-	margin: 1rem;
+	padding: 1rem;
+	background-color: rgb(0 103 177 / 50%);
+	padding-top: 2rem;
 }
 
 .siteHeading {
@@ -55,8 +57,10 @@
 .navigationButtonsHolder {
 	display: flex;
 	overflow: auto;
-	width: 98%;
+	/* width: 98%; */
 	padding: 0.2rem;
+	background-color: rgb(0 103 177 / 80%);
+	padding-top: 0.5rem;
 }
 
 .navigationButton {
@@ -85,7 +89,11 @@
 
 .headingHeading {
 	display: grid;
-	place-items: center;
+    place-items: center;
+}
+
+.br3 {
+	border-radius: 3rem;
 }
 
 /* About and Mission and Vision */
@@ -115,6 +123,11 @@
 	width: 95%;
 	margin: 1rem 0.5rem;
 	text-align: justify;
+}
+
+.brAndBorder {
+	border-radius: 0.5rem;
+    border: 1px solid rgb(84 84 84 / 40%);
 }
 
 /* Core Committee */
@@ -288,6 +301,7 @@
 .publicationLogo {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 .publicationLogo img {
@@ -523,4 +537,8 @@
 	border-right: 1px solid black;
 	height: 1rem;
 	margin: 0 1rem;
+}
+
+.contactDiv {
+	background-color: rgba(0, 103, 177, 0.4);
 }
